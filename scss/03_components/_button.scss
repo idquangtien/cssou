@@ -1,0 +1,121 @@
+%btn {
+	background-color: transparent;
+	border: none;
+	text-decoration: none;
+
+	display: inline-block;
+    
+    color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.5rem 0.85rem;
+    
+    line-height: 1;
+    border-radius: 0.1875rem;
+    transition: color 0.15s ease-in-out, 
+    		background-color 0.15s ease-in-out, 
+    		border-color 0.15s ease-in-out, 
+    		box-shadow 0.15s ease-in-out,
+    		transform 0.15s ease-in-out;
+
+
+	font-size: 0.875rem;
+	font-family: $body_font_family;
+    line-height: 1;
+    font-weight: 400;
+
+    &:hover:not(:disabled), &:active {
+    	text-decoration: none;
+    	transform: scale(1.1);
+    }
+	&:focus {
+		outline: none;
+	}
+	&:disabled {
+		opacity: .5;
+		cursor: not-allowed;
+	}
+	&.disabled {
+	  	pointer-events: none;
+	  	opacity: .5;
+	}
+	&.sm {
+		padding: 0.5rem 0.81rem;
+	}
+	&.lg {
+		padding: 1rem 3rem;
+	}
+
+
+	&.btn-only-icon {
+		padding: 0;
+		display: grid;
+		place-items: center;
+		height: 44px;
+		width: 44px;
+		&.circle {
+			border-radius: 50%;
+		}
+	}
+}
+.btn {
+	@extend %btn;
+	&--primary {
+		background-image: linear-gradient(to bottom right, $primary1, $primary2);
+		color: white;
+	}
+	&--default {
+		color: white;
+	    background-color: $default;
+	}
+	&--success {
+		background-image: linear-gradient(to bottom right, $success, darken($success,10%));
+		color: white;
+	}
+	&--danger {
+		background-image: linear-gradient(to bottom right, $danger, darken($danger,10%));
+		color: white;
+	}
+	&--warning {
+		background-image: linear-gradient(to bottom right, $warning, darken($warning,10%));
+		color: white;
+	}
+	&--outline {
+		border: 1px solid;
+	}
+	&--loading {
+		position: relative;
+		pointer-events: none;
+		color: transparent;
+		&:before, &:after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;	
+			display: flex;			
+		}
+		&:before {
+			content: "";
+			width: 100%;
+			height: 100%;
+			// background-color: rgba($secondary,.8);
+			filter: blur(5px);
+			z-index: 1;
+		}
+		&:after {
+			content: "rotate_right";
+			@include icon();
+			z-index: 3;
+			animation: spin 1s infinite linear;
+			
+			align-items: center;
+			justify-content: center;
+			color: white;
+		}
+	}
+}

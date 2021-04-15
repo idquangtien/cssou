@@ -1,0 +1,40 @@
+%badge {
+	display: inline-block;
+    font-size: 75%;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-size: 12px;
+    padding: .375rem .5625rem;
+    font-weight: normal;
+}
+.badge {
+	@extend %badge;
+	&.active {
+		color: $success;
+    	border: 1px solid $success;
+	}
+    &.suspended {
+        color: $warning;
+        border: 1px solid $warning;
+    }
+    &.block {
+        color: $default;
+        border: 1px solid $default;
+    }
+    &.win {
+        color: $danger;
+        border: 1px solid $danger;
+    }
+    &.close {
+        color: $info;
+        border: 1px solid $info;
+    }
+    &.fee {
+        color: $primary;
+        border: 1px solid $primary;
+    }
+}

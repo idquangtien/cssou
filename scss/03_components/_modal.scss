@@ -1,0 +1,83 @@
+.modal {
+	$tag: &;
+	z-index: $z_index_modal;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	&__container {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		min-height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		padding-top: $space * 4;
+	}
+	&__dimmer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		background-color: rgba($secondary,.8);
+	}
+	&__content {
+		position: relative;
+		width: 600px;
+		margin: 0 auto;
+		background-color: $body_bg;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+	&__header {
+		// background-color: rgba(gray,.1);
+		display: flex;
+		align-items: center;
+		padding: 1rem 2rem;
+	}
+	&__body {
+		padding: 1rem 2rem;
+		max-height: calc(100vh - 240px);
+		overflow: auto;
+	}
+	&__footer {
+		display: flex;
+		justify-content: flex-end;
+		padding: $space $space * 2;
+		.btn + .btn {
+			margin-left: 1rem;
+		}
+	}
+	&__title {
+		flex: 1;
+	}
+	&__label {
+		font-size: 1.5rem;
+		font-weight: 500;
+	}
+	&__close {
+		cursor: pointer;
+		i {
+			font-size: 2rem;
+		}
+	}
+	&.lg {
+		#{$tag}__content {
+			width: 1200px;
+		}
+	}
+	&.sm {
+		#{$tag}__content {
+			width: 300px;
+		}
+	}
+	&.active {
+		display: block;
+	}
+}

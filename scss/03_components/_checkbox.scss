@@ -1,0 +1,40 @@
+.checkbox {
+	input {
+		display: none;
+		& + span {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			border: 2px solid gray;
+			width: 25px;
+			height: 25px;	
+			vertical-align: middle;
+			transition: all .2s;
+			&:after {
+				content: "check";
+				@include icon();
+				font-size: 20px;
+				color: $primary;
+				opacity: 0;
+				transform: rotate(180deg);
+				transition: all .3s;
+			}
+			& + span {
+				margin-left: 5px;
+			}
+		}
+		&:checked {
+			+ span {
+				border-color: transparent;
+				&:after {
+					opacity: 1;
+					transform: rotate(0);
+					font-size: 30px;
+				}
+			}
+		}
+	}
+	&:hover {
+		cursor: pointer;
+	}
+}

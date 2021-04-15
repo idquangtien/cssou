@@ -1,0 +1,78 @@
+.header {
+	height: $header_height;
+	display: flex;
+	
+	.toggleMenu {
+		margin-right: $space;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.header-item {
+		.header-icon {
+			width: 50px;
+			text-align: center;
+			.material-icons {
+				font-size: 28px;
+			}
+		}
+	}
+	.headerUser {
+		position: relative;
+		display: flex;
+		margin-left: $space;
+		&__info {
+			text-align: right;
+			margin-right: $space;
+		}
+		&__avatar {
+			img {
+				width: 45px;
+				width: 45px;
+				border-radius: 50%;
+			}
+		}
+		&__name {
+			.name {
+				font-weight: 500;
+			}
+		}
+		&__money {
+			display: inline-flex;
+			align-items: center;
+			color: $primary;
+			.number {
+				font-weight: bold;
+				margin-right: 5px;
+			}
+			.unit {
+				display: inline-block;
+				width: 1.5rem;
+				height: 1.5rem;
+				vertical-align: middle;
+				background-image: url(../img/coin_gold.png);
+				background-size: cover;
+				background-position: center;
+			}
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	&__left, &__right {
+		display: flex;
+		align-items: center;	
+	}
+	&__left {
+		flex: 1;
+	}
+	&__right {
+	}
+
+}
+
+.subheader {
+	background-color: $subheader_bg;
+	color: $subheader_color;
+	height: $subheader_height;
+}

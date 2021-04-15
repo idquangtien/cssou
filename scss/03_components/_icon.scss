@@ -1,0 +1,57 @@
+@mixin mixin-icon($name) {
+    font-family: $name;
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/materialicons/" + $name + ".woff2") format('woff2');
+}
+
+$fontfaces: (
+    "Material Icons",
+    "Material Icons Outlined",
+    "Material Icons Round",
+    "Material Icons Round",
+    "Material Icons Sharp",
+    "Material Icons Two Tone"
+);
+
+@each $fontface in $fontfaces {
+    @font-face {
+        @include mixin-icon($fontface);    
+    }
+}
+
+@mixin mixin-material-icon($name){
+    font-family: $name;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+.material-icons {
+    @include mixin-material-icon("Material Icons");
+}
+
+.material-icons-outlined {
+    @include mixin-material-icon("Material Icons Outlined");
+}
+
+.material-icons-round {
+    @include mixin-material-icon("Material Icons Round");
+}
+
+.material-icons-sharp {
+    @include mixin-material-icon("Material Icons Sharp");
+}
+
+.material-icons-two-tone {
+    @include mixin-material-icon("Material Icons Two Tone");
+}

@@ -1,0 +1,48 @@
+.tab {
+	&__header {
+		display: flex;
+		
+	}
+	&__body {
+		border-top: 2px solid $secondary2;
+		margin-top: -3px;
+	}
+	&__link {
+		display: block;
+		padding: $space;
+		color: rgba($primary,.5);
+		margin-right: 5px;
+		font-size: 1rem;
+		font-weight: 500;
+		min-width: 150px;
+		text-align: center;
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 0;
+			height: 3px;
+			background-color: $primary;
+			transition: .3s;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+		&.active {
+			color: rgba($primary,1);
+			&:after {
+				left: 0;
+				width: 100%;
+			}
+		}
+	}
+	&__content {
+		display: none;
+		padding: $space 0;
+		&.active {
+			display: block;
+		}
+	}
+}

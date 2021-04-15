@@ -1,0 +1,37 @@
+$default: #1e1e2d;
+
+$primary: #ef5d60;
+
+$primary1: #ef5d60;
+$primary2: #ec4067;
+
+$secondary: #1a1a1a;
+$secondary1: #5c6b73;
+$secondary2: #415a77;
+$secondary3: #1b2a41;
+
+$accent: red;
+
+$success: #53D769;
+$danger: #F64E60;
+$warning: #FFA800;
+$info: #8950FC;
+
+$link: #5ac8fa;
+
+$g_primary: linear-gradient(to bottom right, $primary1, $primary2);
+$g_success: linear-gradient(to bottom right, $success, darken($success,10%));
+$g_danger: linear-gradient(to bottom right, $danger, darken($danger,10%));
+$g_warning: linear-gradient(to bottom right, $warning, darken($warning,10%));
+
+$colors: (
+	"primary": $primary,
+	"secondary": $secondary,
+	"accent": $accent,
+	"default": $default,
+	"info": $info,
+	"success": $success,
+	"danger": $danger,
+	"warning": $warning,
+	"link": $link,
+);

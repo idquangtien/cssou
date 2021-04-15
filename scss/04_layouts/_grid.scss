@@ -1,0 +1,36 @@
+.grid {
+	display: grid;
+	@each $key, $value in $breakpoints {
+		@if $key == 'lg' {
+			@for $i from 1 through 12 {
+				&.grid-#{$key}-#{$i} {
+					grid-template-columns: repeat($i, 1fr);
+				}
+				&.grid-gap-#{$key}-#{$i*5} {
+					grid-gap: $i * 5px;
+				}
+				.grid-cell-lg-#{$i} {
+					grid-column: span $i;
+				}
+			}
+		} @else {
+			@include media-max-width($value) {
+				@for $i from 1 through 12 {
+					&.grid-#{$key}-#{$i} {
+						grid-template-columns: repeat($i, 1fr);
+					}
+					&.grid-gap-#{$key}-#{$i*5} {
+						grid-gap: $i * 5px;
+					}
+					.grid-cell-lg-#{$i} {
+						grid-column: span $i;
+					}
+				}
+			}
+		}
+	}
+	.grid__cell {
+		&:nth-child(even){
+		}
+	}
+}

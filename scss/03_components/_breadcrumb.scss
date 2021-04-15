@@ -1,0 +1,102 @@
+@mixin breadcrumb (
+	$color: $default,
+	$active: $secondary,
+	$size: 2rem
+){
+
+	$tag: &;
+	display: flex;
+	align-items: center;
+	&__link {
+		white-space: nowrap;
+		background-color: $color;
+		color: white;
+		text-decoration: none;
+		height: $size;
+		line-height: $size;
+		padding-right: $size / 4;
+	}
+
+	& + #{$tag} {
+		margin-left: -$size * 3 / 4;
+	}
+	&::before {
+		content: "";
+		display: inline-block;
+		border: $size / 2 solid $color;
+		border-left-color: transparent;
+	}
+	&::after {
+		content: "";
+		display: inline-block;
+		border: $size / 2 solid transparent;
+		border-left-color: $color;
+	}
+	&:first-child {
+		#{$tag}__link {
+			padding-left: $size / 2;
+		}
+		&::before {
+			content: none;
+		}
+	}
+	&:hover {
+		&::before {
+			border: $size / 2 solid darken($color, 10%);
+			border-left-color: transparent;
+		}
+		&::after {
+			border-left-color: darken($color, 10%);
+		}
+		#{$tag}__link {
+			background-color: darken($color, 10%);
+			cursor: pointer;
+		}
+	}
+	&.more {
+		margin-left: -2.5rem;
+		&::before, &::after {
+			border-color: transparent;
+		}
+		#{$tag}__link {
+			background-color: transparent;
+			letter-spacing: .125rem;
+			padding: 0;
+		}
+		&:hover {
+			#{$tag}__link { 
+				cursor: default;
+			}
+		}
+	}
+	&.active {
+		#{$tag}__link {
+
+		}
+		&::before {
+			border: $size / 2 solid $active;
+			border-left-color: transparent;
+		}
+		&::after {
+			border: $size / 2 solid transparent;
+			border-left-color: $active;
+		}
+		#{$tag}__link {
+			background-color: $active;
+		}
+		&:hover {
+			#{$tag}__link { 
+				cursor: default;
+			}
+		}
+	}
+	
+}
+
+.breadcrumb {
+	@include breadcrumb($primary, #4b6584);
+}
+.breadcrumbs {
+	display: flex;
+	
+}

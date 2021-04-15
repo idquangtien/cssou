@@ -1,0 +1,106 @@
+img {
+	max-width: 100%;
+}
+a {
+	&:focus, &:active {
+		outline: none;
+		text-decoration: underline;
+	}
+}
+
+.img {
+	display: block;
+	width: 100%;
+}
+
+
+@for $i from 1 through 50 {
+	.width-#{$i * 10} { width: $i * 10px; }
+	.min-width-#{$i * 10} { min-width: $i * 10px; }
+	.height-#{$i * 10} { height: $i * 10px; }
+	.min-height-#{$i * 10} { min-height: $i * 10px; }
+}
+
+@for $i from 1 through 10 {
+	.margin-#{$i * 5} { margin: $i * 5px; }
+	.margin-top-#{$i * 5} { margin-top: $i * 5px; }
+	.margin-right-#{$i * 5} { margin-right: $i * 5px; }
+	.margin-bottom-#{$i * 5} { margin-bottom: $i * 5px; }
+	.margin-left-#{$i * 5} { margin-left: $i * 5px; }
+}
+
+@for $i from 1 through 5 {
+	.mh#{$i}rem { margin-left: #{$i}rem; margin-right: #{$i}rem; }
+	.mv#{$i}rem { margin-top: #{$i}rem; margin-bottom: #{$i}rem; }
+	
+	.mt#{$i}rem { margin-top: #{$i}rem; }
+	.mr#{$i}rem { margin-right: #{$i}rem; }
+	.mb#{$i}rem { margin-bottom: #{$i}rem; }
+	.ml#{$i}rem { margin-left: #{$i}rem; }
+}
+
+.hide { display: none; }
+.show, .db { display: block; }
+.dib { display: inline-block; }
+
+
+.flex { display: flex; }
+
+.flex-top { align-items: flex-start; }
+.flex-middle { align-items: center; }
+.flex-bottom { align-items: flex-end; }
+
+.flex-start { justify-content: flex-start; }
+.flex-center { justify-content: center; }
+.flex-end { justify-content: flex-end; }
+
+@for $i from 1 through 12 {
+	.flex-#{$i} { flex: $i; }
+}
+
+.link {
+	color: #3699FF;
+	font-weight: 500;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+
+
+.tc, .text-center { text-align: center; }
+.tl, .text-left { text-align: left; }
+.tr, .text-right { text-align: right; }
+.text-nowrap { white-space: nowrap; }
+
+.ba {
+	border: 1px solid;
+}
+.br-50 {
+	border-radius: 50%;
+}
+
+.positive, .text-positive {
+	color: $success;
+}
+.negative, .text-negative {
+	color: $danger;
+}
+
+@each $key, $value in $colors {
+	.text-#{$key} { color: $value; }
+	.#{$key} { color: $value; }
+	.bg-#{$key} { background-color: $value; }
+}
+
+
+.pointer {
+	cursor: pointer;
+}
+.not-allowed {
+	cursor: not-allowed;
+}
+.help {
+	cursor: help;
+}

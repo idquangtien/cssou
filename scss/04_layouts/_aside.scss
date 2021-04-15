@@ -1,0 +1,182 @@
+.aside-menu {
+	.menu-item {
+		position: relative;
+		.menu-link {
+			color: inherit;
+			text-decoration: none;	
+		}
+		.sub-menu {
+			display: none;
+			.menu-item {
+				.menu-link {
+					padding-left: 20px;
+				}
+				&.active {
+					// color: $primary;
+					.menu-link {
+						color: inherit;
+					}
+				}
+			}
+		}
+		& > .menu-link {
+			display: flex;
+			align-items: center;
+			.menu-icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: $aside_width;
+				min-width: $aside_width;
+				height: $aside_width;
+				i {
+					font-size: 20px;
+				}
+			}
+			.menu-text {
+				flex: 1;
+			}
+			.menu-arrow {
+				padding: 0 $space;
+				&:before {
+					content: "arrow_right";
+					@include icon();
+					visibility: hidden;
+				}
+			}
+		}
+		&.has-child {
+			& > .menu-link {
+				.menu-arrow {
+					&:before {
+						visibility: visible;
+					}
+				}
+			}
+		}
+		&.opened {
+			.menu-arrow {
+				&:before {
+					content: "arrow_drop_down";
+				}
+			}
+			.sub-menu {
+				display: block;
+			}
+		}
+	}
+	& > .menu-item {
+
+		&.active {
+			& > .menu-link {
+				background-color: rgba(white,.1);
+				color: white;
+				.menu-icon {
+					// color: $primary;
+				}
+				.menu-text {
+					color: inherit;
+				}
+			}
+		}
+	}
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+
+	height: $header_height;
+	background-color: $header_bg;
+	color: $header_color;
+	padding: 0 $space;
+	&__logo {
+		flex: 1;
+		display: block;
+		img {
+			width: 92px;
+			height: 12px;
+			vertical-align: middle;
+			border-style: none;
+		}
+	}
+	&__toggle {
+		font-size: 24px;
+		color: inherit;
+		&:after {
+			content: "menu";
+			@include icon();
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}	
+}
+
+.asideLeft {
+	$aside: &;
+	position: fixed;
+	top: $space;
+	left: $space;
+	width: $aside_width;
+	height: calc(100% - #{$space} * 2);
+	background-color: $aside_bg;
+	
+	
+	transition: width .3s;
+	width: $aside_width;
+	@include gradient($primary1, $primary2);
+	color: white;
+	border-radius: 8px;
+	.nav {
+		padding: $space 0 0;
+		overflow-x: hidden;
+		overflow-y: auto;
+		height: calc(100% - #{$space});
+		display: flex;
+		flex-direction: column;
+    	justify-content: space-between;
+	}
+	.aside-menu {
+		.menu-item {
+			.menu-link {
+				.menu-text, .menu-arrow {
+					display: none;
+				}
+			}
+			&.opened {
+				.sub-menu {
+					display: none;
+				}		
+			}
+		}
+	}
+}
+
+.expand {
+	.asideLeft {
+		width: $aside_expand;
+		margin-right: $space * 2;
+		.brand {
+			width: 300px;
+			.brand__logo {
+				display: block;
+			}
+		}
+		.aside-menu {
+			.menu-item {
+				.menu-link {
+					.menu-text, .menu-arrow {
+						display: block;
+					}
+				}
+				&.opened {
+					.sub-menu {
+						display: block;
+					}		
+				}
+			}
+		}
+	}
+}
+

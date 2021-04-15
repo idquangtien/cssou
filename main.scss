@@ -1,0 +1,41 @@
+// ========================================================================
+// 01-ABSTRACTS
+// ========================================================================
+	@import 'scss/01_abstracts/variable';
+	@import 'scss/01_abstracts/colors';
+	@import 'scss/01_abstracts/mixin';
+	@import 'scss/01_abstracts/function';
+// ========================================================================
+// 02-RESET
+// ========================================================================
+	@import 'scss/02_reset/font';
+	@import 'scss/02_reset/animation';
+	@import 'scss/02_reset/reset';
+	@import 'scss/02_reset/global';
+// ========================================================================
+// 03-COMPONENTS
+// ========================================================================
+	@import 'scss/03_components/icon';
+	@import 'scss/03_components/loading';
+	@import 'scss/03_components/button';
+	@import 'scss/03_components/checkbox';
+	@import 'scss/03_components/dropdown';
+	@import 'scss/03_components/form';
+	@import 'scss/03_components/table';
+	@import 'scss/03_components/card';
+	@import 'scss/03_components/alert';
+	@import 'scss/03_components/modal';
+	@import 'scss/03_components/tab';
+	@import 'scss/03_components/breadcrumb';
+// ========================================================================
+// 04-LAYOUT
+// ========================================================================
+	@import 'scss/04_layouts/grid';
+	@import 'scss/04_layouts/header';
+	@import 'scss/04_layouts/footer';
+	@import 'scss/04_layouts/aside';
+// ========================================================================
+// 05-CORE
+// ========================================================================
+	@import 'scss/05_core/login';
+	@import 'scss/05_core/core';

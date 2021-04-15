@@ -1,0 +1,60 @@
+.alert {
+	display: none;
+	width: 400px;
+	background-color: gray;
+	color: white;
+	border-radius: 8px;
+	box-shadow: -4px 4px 4px rgba($success,.2);
+	
+	&__icon {
+		padding: 1rem 0 1rem 1rem;
+		display: grid;
+		place-items: center;
+		i {
+			font-size: 7rem;	
+			color: rgba(white,.2);	
+		}
+	}
+	&__close {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		&:hover {
+			cursor: pointer;
+			opacity: .8;
+		}
+	}
+	&__content {
+		flex: 1;
+		position: relative;
+		padding: 1rem 2.5rem 1rem 1rem;
+	}
+	&.success {
+		box-shadow: -4px 4px 4px rgba($success,.2);
+		@include gradient($success, darken($success,20%));
+	}
+	&.danger {
+		box-shadow: -4px 4px 4px rgba($danger,.2);
+		@include gradient($danger, darken($danger,20%));
+	}
+	&.warning {
+		box-shadow: -4px 4px 4px rgba($warning,.2);
+		@include gradient($warning, darken($warning,20%));
+	}
+	&.active {
+		display: flex;
+	}
+}
+.alerts {
+	z-index: $z_index_modal;
+	display: none;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	.alert + .alert {
+		margin-top: 1rem;
+	}
+	&.active {
+		display: block;
+	}
+}

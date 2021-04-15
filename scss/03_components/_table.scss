@@ -1,0 +1,168 @@
+@mixin table( $border: rgba(101, 103, 119, 0.21), $bg: white) {
+	$tag: &;
+
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 1rem;
+	vertical-align: baseline;
+	font-size: 0.875rem;
+	.cell-no {
+		width: 1%;
+		text-align: center;
+	}
+	.cell-actions {
+		white-space: nowrap;
+		width: 1%;
+		.btn {
+		}
+		.edit {
+			// color: $warning;
+		}
+		.delete {
+			// color: $danger;
+		}
+	}
+	.cell-datetime {
+		white-space: nowrap;
+	}
+	thead, tfoot {
+		// font-size: 1rem;
+		tr {
+			th {
+				padding: 1.25rem 0.9375rem;
+				font-weight: 600;
+				text-align: left;
+				.sort {
+					position: relative;
+					padding-right: 30px;
+					&:after {
+						content: "unfold_more";
+						@include icon();
+						color: gray;
+						font-size: 1.2rem;
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						right: 10px;
+						display: inline-flex;
+						justify-content: center;
+						align-items: center;
+					}
+					&.sort-down, &.sort-up {
+						&:after {
+							
+						}
+					}
+					&.sort-down {
+						&:after {
+							content: "expand_more";
+						}
+					}
+					&.sort-up {
+						&:after {
+							content: "expand_less";
+						}
+					}
+					&:hover {
+						cursor: pointer;
+						&:after {
+							color: $primary;
+						}
+					}
+				}
+				&.text-right {
+					text-align: right;
+				}
+				&.text-center {
+					text-align: center;
+				}
+			}
+		}
+	}
+	thead {
+		font-weight: 500;
+		color: white;
+		border-bottom: 2px solid $border;
+	}
+	tbody {
+		tr {
+			border-bottom: 1px solid $border;
+			td {
+				min-height: 34px;
+				padding: 1rem 0.9375rem;
+				
+				vertical-align: baseline;
+				&.td-number {
+					text-align: right;
+				}
+				img {
+					width: 100%;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+	tfoot {
+		border-top: 2px solid $border;
+	}
+}
+
+.table {
+	@include table();
+}
+.table--sticky {
+	th {
+		position: -webkit-sticky;
+		position: sticky;
+		background-color: $secondary;
+		z-index: 1;
+
+	}
+	// .frozen {
+	// 	position: -webkit-sticky;
+	// 	position: sticky;
+	// 	width: 300px;
+	// 	left: 0;
+	// 	z-index: 5;
+	// 	background-color: $secondary3;
+	// }
+	td {
+	}
+	thead, tfoot {
+		th.frozen {
+			z-index: 2;
+		}
+		tr {
+			border-bottom: none;
+			th {
+				border-bottom: none;
+			}
+		}
+	}
+	thead {
+		th {
+			top: 0;
+		}	
+	}
+	tfoot {
+		th {
+			bottom: -1px;
+		}	
+	}
+	tbody {
+		td {
+			width: 200px;
+		}
+		
+		tr:last-child {
+			border-bottom: none;
+		}
+	}
+}
+.table-container {
+	position: relative;
+	overflow: auto;
+}
+.table-filter {
+	display: flex;
+}

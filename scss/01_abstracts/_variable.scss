@@ -1,0 +1,61 @@
+$space: 15px;
+
+$body_bg: #121212;
+$body_color: #a2a3b7;
+$body_font_family: "Quicksand";
+$body_font_size: 15px;
+
+$header_bg: #1a1a27;
+$header_color: #a2a3b7;
+$header_height: 60px;
+
+$subheader_bg: lavender;
+$subheader_color: white;
+$subheader_height: 55px;
+
+$footer_bg: transparent;
+$footer_color: white;
+$footer_height: 30px;
+
+
+$aside_width: 60px;
+$aside_expand: 260px;
+$aside_bg: #1e1e2d;
+$aside_color: #a2a3b7;
+
+$card_bg1: #1c2541;
+$card_bg2: #3a506b;
+
+$form_h: 40px;
+$form_border: #bdbdbd;
+
+
+// ===================================================
+// BREAKPOINTS
+// ===================================================
+// MOBILE
+$xs: 767px;
+// TABLET
+$sm: 768px;
+// DESKTOP
+$md: 1200px;
+// DESKTOP EXTRA
+$lg: 1400px;
+$breakpoints: (
+	'lg': $lg,
+	'md': $md,
+	'sm': $sm,
+	'xs': $xs,
+);
+
+// ===================================================
+// PATH
+// ===================================================
+$path: '../img/';
+
+// ===================================================
+// Z-INDEX
+// ===================================================
+$z_index_modal: 1050;
+
+

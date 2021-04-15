@@ -1,0 +1,17 @@
+.card {
+	background-color: $secondary;
+	border-radius: 8px;
+	.card__title {
+		flex: 1;
+		display: block;
+		font-weight: 500;
+		font-size: 1.25rem;
+	}
+	.card__header {
+		padding: $space ($space * 2);
+	}
+	.card__body {
+		padding: $space ($space * 2);
+	}
+
+}

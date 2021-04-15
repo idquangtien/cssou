@@ -1,0 +1,30 @@
+@mixin font($name, $path, $bold: normal, $style: normal) {
+	font-family: $name;
+	font-display: swap;
+	src: url($path);
+	font-weight: $bold;
+	font-style: $style;
+}
+
+
+$font-path-Quicksand: "./../fonts/Quicksand/static/";
+$font-name: "Quicksand";
+
+
+@font-face {
+	@include font($font-name, $font-path-Quicksand + $font-name +'-Regular.ttf');
+}
+@font-face {
+	@include font($font-name, $font-path-Quicksand + $font-name +'-Light.ttf', lighter);
+}
+@font-face {
+	@include font($font-name, $font-path-Quicksand + $font-name +'-Medium.ttf', 500);
+}
+@font-face {
+	@include font($font-name, $font-path-Quicksand + $font-name +'-SemiBold.ttf', 600);
+}
+@font-face {
+	@include font($font-name, $font-path-Quicksand + $font-name +'-Bold.ttf', bold);
+}
+
+

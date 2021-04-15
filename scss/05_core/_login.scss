@@ -1,0 +1,133 @@
+.login {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	font-size: 1rem;
+
+	&__content {
+		background-image: linear-gradient(rgba(white,.5), rgba(white,.25));
+		color: white;
+		width: min(100%, 500px);
+		margin: 0 auto;
+		padding: 3rem;
+		border-radius: 1rem;
+	}
+	
+	&__header {
+		margin-bottom: $space * 4;
+	}
+	&__logo {
+		margin: 0 auto $space * 2;
+		text-align: center;
+		img {
+		}
+	}
+	&__title, &__subtitle {
+		text-align: center;
+		;
+	}
+	&__subtitle {
+		font-weight: normal;
+	}
+	&__input {
+		margin-bottom: $space;
+		
+		label {
+			display: block;
+			font-weight: 500;
+			color: white
+		}
+		input {
+			display: block;
+			width: 100%;
+			height: 40px;
+			border: none;
+			border-bottom: 1px solid rgba(gray,.5);
+			background-color: transparent;
+			font-size: 1em;
+			color: white;
+			padding: 0;
+			transition: border .3s;
+			&:focus, &:active {
+				outline: none;
+				background-color: transparent;
+				border-color: white;	
+			}
+			&:-internal-autofill-selected {
+			    appearance: menulist-button;
+			    background-color: rgb(232, 240, 254) !important;
+			    background-image: none !important;
+			    color: -internal-light-dark(black, white) !important;
+			}
+		}
+		.help-block {
+			opacity: 0;
+			font-size: .8rem;
+		}
+		&.password {
+			input {
+				letter-spacing: .5rem;
+			}
+		}
+		&.has-error {
+			input {
+				border-color: $danger;
+				background-image: url($path + "icon_invalid.svg");
+			    background-repeat: no-repeat;
+			    background-position: right calc(0.375em + 0.325rem) center;
+			    background-size: calc(0.75em + 0.65rem) calc(0.75em + 0.65rem);
+			}
+			.help-block {
+				opacity: 1;
+				color: $danger;
+			}
+		}
+		&.has-success {
+			input {
+				border-color: $success;
+				background-image: url($path + "icon_valid.svg");
+			    background-repeat: no-repeat;
+			    background-position: right calc(0.375em + 0.325rem) center;
+			    background-size: calc(0.75em + 0.65rem) calc(0.75em + 0.65rem);
+			}
+			.help-block {
+				opacity: 1;
+				color: $success;
+			}
+		}
+	}
+	&__row {
+		display: flex;
+		margin-bottom: $space * 2;
+	}
+	&__button {
+		text-decoration: none;
+		display: inline-block;
+		height: 40px;
+		line-height: 40px;
+		padding: 0 10px;
+		min-width: 120px;
+		margin: 0 10px;
+		text-align: center;
+		border-radius: 5px;
+		font-size: 1rem;
+		font-weight: 500;
+		line-height: 40px;
+		background-color: transparent;
+		border: 1px solid $primary;
+		color: $primary;
+		&.primary {
+			background-color: $primary;
+			color: white;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:disabled {
+			opacity: .3;
+			cursor: not-allowed;
+		}
+	}
+}
